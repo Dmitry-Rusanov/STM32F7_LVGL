@@ -37,7 +37,7 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-
+//extern void initialise_monitor_handles(void);
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -80,7 +80,7 @@ void SystemClock_Config(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
+	//initialise_monitor_handles();
   /* USER CODE END 1 */
 
   /* Enable I-Cache---------------------------------------------------------*/
@@ -114,6 +114,7 @@ int main(void)
   MX_LTDC_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
+
 	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_3,GPIO_PIN_RESET);
 	BSP_SDRAM_Init();
 	BSP_LCD_Init();
@@ -128,15 +129,12 @@ int main(void)
 	BSP_LCD_DisplayStringAt(0,0, (uint8_t*)"Capacitive touch screen test",CENTER_MODE);
 	BSP_LCD_SetTextColor(LCD_COLOR_WHITE);
 	BSP_LCD_DrawHLine(0, 30, 1024);
-<<<<<<< HEAD
 
 
 
 
 
 
-=======
->>>>>>> main
   /* USER CODE END 2 */
 
   /* Infinite loop */
