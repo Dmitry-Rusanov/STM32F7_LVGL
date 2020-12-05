@@ -128,12 +128,15 @@ int main(void)
 	BSP_LCD_DisplayStringAt(0,0, (uint8_t*)"Capacitive touch screen test",CENTER_MODE);
 	BSP_LCD_SetTextColor(LCD_COLOR_WHITE);
 	BSP_LCD_DrawHLine(0, 30, 1024);
+<<<<<<< HEAD
 
 
 
 
 
 
+=======
+>>>>>>> main
   /* USER CODE END 2 */
 
   /* Infinite loop */
