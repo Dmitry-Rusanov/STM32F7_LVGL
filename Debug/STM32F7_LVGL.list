@@ -27,7 +27,6 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  11 .ARM.attributes 00000030  00000000  00000000  00020090  2**0
                   CONTENTS, READONLY
-<<<<<<< HEAD
  12 .debug_info   00017c65  00000000  00000000  000200c0  2**0
                   CONTENTS, READONLY, DEBUGGING
  13 .debug_abbrev 00003846  00000000  00000000  00037d25  2**0
@@ -45,25 +44,6 @@ Idx Name          Size      VMA       LMA       File off  Algn
  19 .comment      0000007b  00000000  00000000  00168cb7  2**0
                   CONTENTS, READONLY
  20 .debug_frame  00005394  00000000  00000000  00168d34  2**2
-=======
- 12 .debug_info   00017c63  00000000  00000000  000200c0  2**0
-                  CONTENTS, READONLY, DEBUGGING
- 13 .debug_abbrev 0000382c  00000000  00000000  00037d23  2**0
-                  CONTENTS, READONLY, DEBUGGING
- 14 .debug_aranges 00001300  00000000  00000000  0003b550  2**3
-                  CONTENTS, READONLY, DEBUGGING
- 15 .debug_ranges 00001108  00000000  00000000  0003c850  2**3
-                  CONTENTS, READONLY, DEBUGGING
- 16 .debug_macro  00028ef0  00000000  00000000  0003d958  2**0
-                  CONTENTS, READONLY, DEBUGGING
- 17 .debug_line   0001316d  00000000  00000000  00066848  2**0
-                  CONTENTS, READONLY, DEBUGGING
- 18 .debug_str    000ef2e2  00000000  00000000  000799b5  2**0
-                  CONTENTS, READONLY, DEBUGGING
- 19 .comment      0000007b  00000000  00000000  00168c97  2**0
-                  CONTENTS, READONLY
- 20 .debug_frame  00005394  00000000  00000000  00168d14  2**2
->>>>>>> main
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -5263,7 +5243,7 @@ int main(void)
  80023e0:	b580      	push	{r7, lr}
  80023e2:	af00      	add	r7, sp, #0
   /* USER CODE BEGIN 1 */
-
+	//initialise_monitor_handles();
   /* USER CODE END 1 */
 
   /* Enable I-Cache---------------------------------------------------------*/
@@ -5306,6 +5286,7 @@ int main(void)
   MX_USART1_UART_Init();
  800240c:	f000 fb20 	bl	8002a50 <MX_USART1_UART_Init>
   /* USER CODE BEGIN 2 */
+
 	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_3,GPIO_PIN_RESET);
  8002410:	2200      	movs	r2, #0
  8002412:	2108      	movs	r1, #8
