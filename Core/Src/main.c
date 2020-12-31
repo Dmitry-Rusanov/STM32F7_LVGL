@@ -33,6 +33,7 @@
 #include "stm32746g_sdram.h"
 #include "stm32746g_LCD.h"
 #include "GT811.h"
+#include <stdio.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
