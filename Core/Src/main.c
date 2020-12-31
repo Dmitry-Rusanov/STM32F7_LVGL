@@ -143,6 +143,8 @@ int main(void)
   while (1)
   {
 
+//	  printf("test\r\n");
+//	  HAL_Delay(100);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -257,6 +259,34 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
+
+/* USER CODE BEGIN 4 */
+#ifdef __GNUC__
+#define PUTCHAR_PROTOTYPE int __io_putchar(int ch)
+#else
+  #define PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)
+#endif /* __GNUC__ */
+
+#define STR_SIZE 255
+
+uint8_t str[STR_SIZE]={0};
+
+PUTCHAR_PROTOTYPE
+{
+	static uint16_t index = 0 ;
+
+	str[index++] = ch;
+	if(ch=='\n')
+	{
+		HAL_UART_Transmit_DMA(&huart1,str,index);
+		index = 0;
+	}
+	//HAL_UART_Transmit(&huart1, (uint8_t *)&ch, 1, 0xFFFF);
+	return ch;
+
+}
+
+
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
 	if(GPIO_Pin == GPIO_PIN_7)
